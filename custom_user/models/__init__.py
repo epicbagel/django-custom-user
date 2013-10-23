@@ -1,1 +1,2 @@
+from base_model import BaseModel
 from abstract_email_user import AbstractEmailUser
