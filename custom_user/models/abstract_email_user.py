@@ -1,12 +1,12 @@
+from model_utils.models import TimeStampedModel
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import (
 	AbstractBaseUser, PermissionsMixin
 )
 from custom_user.managers import UserManager
-from custom_user.models import BaseModel
 
-class AbstractEmailUser(BaseModel, AbstractBaseUser, PermissionsMixin):
+class AbstractEmailUser(TimeStampedModel, AbstractBaseUser, PermissionsMixin):
 	email = models.EmailField(verbose_name='Email address', max_length = 255, unique = True, db_index = True)
 	# Base user stuff
 	is_active = models.BooleanField(default = True)
