@@ -34,7 +34,7 @@ class AbstractEmailUser(TimeStampedModel, AbstractBaseUser, PermissionsMixin):
 	def is_staff(self):
 		"Is the user a member of staff?"
 		# Simplest possible answer: All admins are staff
-		return self.is_admin
+		return self.is_superuser
 
 	class Meta:
 		abstract = True
