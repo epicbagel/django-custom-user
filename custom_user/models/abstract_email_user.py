@@ -10,7 +10,7 @@ class AbstractEmailUser(TimeStampedModel, AbstractBaseUser, PermissionsMixin):
 	email = models.EmailField(verbose_name='Email address', max_length = 255, unique = True, db_index = True)
 	# Base user stuff
 	is_active = models.BooleanField(default = True)
-	is_admin = models.BooleanField(default = False)
+	is_superuser = models.BooleanField(default = False)
 	objects = UserManager()
 	USERNAME_FIELD = 'email'
 	def get_full_name(self):
