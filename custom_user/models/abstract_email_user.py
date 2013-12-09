@@ -19,7 +19,7 @@ class AbstractEmailUser(TimeStampedModel, AbstractBaseUser, PermissionsMixin):
 	# The user is identified by their email address
 	def get_short_name(self): return self.email
 	# On Python 3: def __str__(self):
-	def __unicode__(self): u"%s" % return self.email
+	def __unicode__(self): return u"%s" % self.email
 	@property
 	def is_staff(self):
 		return self.is_superuser
